@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = aaa;
+			function aaa() {
+				console.log(1);
+				function fn(){
+					console.log(2);
+				}
+			}
+			function fn(){
+				console.log(3);
+			}
+		</script>
+	</head>
+	<body>
+		<a href="#" onclick="fn()">点击</a>
+		<!-- <script type="text/javascript">
+			function fn(){
+				a = 1;
+			}
+			fn();
+			alert(a);
+		</script> -->
+	</body>
+</html>

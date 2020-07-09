@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			button {
+				margin: 10px;
+			}
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="btn">隐藏</button>
+		<div>
+			临千仞之溪，非才长也，位高也！
+		</div>
+		<script type="text/javascript">
+			var btn = document.getElementById("btn");
+			var div = document.getElementsByTagName("div")[0];
+			
+			btn.onclick = function (){
+				if(this.innerHTML === "隐藏") {
+					// div.style.display = "none";
+				div.className = "hide";
+				btn.innerHTML = "显示";
+				}else {
+					div.className = "show";
+					btn.innerHTML = "隐藏";
+				}
+				
+			}
+		</script>
+	</body>
+</html>

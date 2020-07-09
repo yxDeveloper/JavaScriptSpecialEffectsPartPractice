@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button">运动到200</button>
+		<button type="button">运动到400</button>
+		<div></div>
+		
+		<script type="text/javascript">
+			var btn = document.getElementsByTagName("button")[0];
+			var div = document.getElementsByTagName("div")[0];
+			
+			var timer = null;
+			btn.onclick = function (){
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var target = 0;
+					var step = (target - div.offsetLeft)/10;
+					step = step>0?Math.ceil(step):Math.floor(step);
+					div.style.left = div.offsetLeft+step+"px";
+					cosole.log(1);
+					if(Math.abs(0-div.offsetLeft)<Math.abs(step)){
+						div.style.left = 0+"px";
+						clearInterval(timer);
+					}
+				},30);
+				var target = 0;
+			}
+		</script>
+	</body>
+</html>

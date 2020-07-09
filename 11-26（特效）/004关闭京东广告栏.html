@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.top-banner {
+				background-color: #a8e2fb;
+				height: 80px;
+			}
+			.w {
+				width: 1210px;
+				margin: 10px auto;
+				position: relative;
+			}
+			img {
+				width: 1210px;
+				height: 80px;
+				/* background-color: #a8e2fb; */
+			}
+			a {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				color: #fff;
+				background-color: #000;
+				text-decoration: none;
+				width: 20px;
+				height: 20px;
+				font: 700 14px/20px "simsun";
+				text-align: center;
+			}
+			.hide {
+				display: none; !important;
+			}
+		</style>
+<!-- 		<script type="text/javascript">
+			window.onload = function () {
+				
+			}
+		</script> -->
+	</head>
+	<body>
+		<div class="top-banner" id="topBanner">
+			<div class="w">
+				<img src="image/5bf63845N29eeb1d0.jpg" alt="啦啦啦">
+				<a href="#" id="closeBanner">X</a>
+			</div>
+		</div>
+		<script>
+			//获取事件源和相关元素
+			var closeBanner = document.getElementById("closeBanner");
+			var topBanner = document.getElementById("topBanner");
+			//绑定事件
+			closeBanner.onclick = function () {
+				//书写事件驱动程序
+				// alert(1);
+				// console.log(1);
+				topBanner.className = "hide";		//替换旧类名
+				// topBanner.className += " hide";		//保留原类名添加新类名
+				// topBanner.style.display = "none";		
+			}
+			
+		</script>
+	</body>
+</html>

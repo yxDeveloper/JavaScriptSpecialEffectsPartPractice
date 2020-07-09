@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://www.baidu.com" style="display:block;margin:10;" onclick="fn();return false;">切换</a>
+		<!-- <a href="#" style="display:block;margin:10;">切换</a> -->
+		<!-- <a href="javascript:;">切换</a> -->
+		<!-- <a href="javascript:void(0);" style = "margin: 10px;display: block;">切换</a> -->
+		<img id="img" src="image/1.jpg" width="400">
+		
+ 		<script type="text/javascript">
+// 			
+// 			var a = document.getElementsByTagName("a")[0];
+// 			var img = document.getElementById("img");
+// 			
+// 			a.onclick = function () {
+// 				img.src = "image/2.jpg";
+// 				return false;	禁止跳转
+// 			}
+// 			 
+			 var img = document.getElementById("img");
+			 function fn(){
+				 img.src = "image/2.jpg";
+				 // return false;
+			 }
+		</script>
+	</body>
+</html>

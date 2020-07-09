@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+        .box {
+            border: 10px solid #000;
+        }
+    </style>
+	</head>
+	<body>
+		<div class="box" style="width: 100px;height: 100px;background-color: pink;">我爱你中国</div>
+		<script type="text/javascript">
+			var box = document.getElementsByTagName("div")[0];
+			
+			//1.样式少的时候使用
+			console.log(box.style.backgroundColor);
+			
+			//2.style是对象
+			console.log(box.style);
+			console.log(typeof box.style);
+			
+			//3.值是字符串,没有设置值是"";
+			console.log(box.style.lineHeight);
+			console.log(box.style.border);
+			console.log(box.style.width);
+			
+			//4.命名规则,驼峰命名.和css不一样
+			console.log(box.style.backgroundColor);
+			
+			//5.设置了类样式不能获取.(只和行内式交互，和内嵌和外联无关)
+			console.log(box.style.lineHeight);
+			console.log(box.style.border);
+			console.log(box.style.width);
+			console.log(typeof box.className);
+			
+			//6.box.style.cssText = "字符串形式的样式";
+			console.log(box.style.cssText);
+			box.style.cssText = "width: 200px; height: 200px; background-color:red; line-height: 200px; text-aligh:center;"
+		</script>
+	</body>
+</html>

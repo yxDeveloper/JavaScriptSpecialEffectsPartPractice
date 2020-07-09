@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<button>动画</button>
+		<div class="box" style="left: 0px"></div>
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementsByTagName("button")[0];
+		var div = document.getElementsByTagName("div")[0];
+		
+		//闪动
+// 		btn.onclick = function () {
+// 			div.style.left = "500px";
+// 		}
+		//匀速运动
+		btn.onclick = function () {
+			//定时器每隔一定时间向右走一些
+			setInterval(function () {
+				console.log(parseInt(div.style.left));
+				div.style.left = parseInt(div.style.left)+10+"px";  //NaN不能用,NaN加任何值都是NaN,所以这种方法必须在之前就有div.style.left的值
+				//动画原理:盒子未来的位置 = 盒子现在的位置 + 步长;
+				//style.left赋值,用offsetLeft获取值;
+				//style.left获取值不方便,获取行内式如果没有"";容易出现NaN;
+				//offsetLeft获取值特别方便,而且是现成number方便计算.因为它是只读的不能赋值.
+				// div.style.left = div.offsetLeft + 10 +"px";
+				
+				
+				
+				div.style.left = div.offsetLeft + 10 + "px";
+			},30);
+		}
+	</script>
+</html>

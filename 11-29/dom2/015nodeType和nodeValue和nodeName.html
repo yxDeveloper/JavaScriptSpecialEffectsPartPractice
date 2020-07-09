@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" value = "111">
+			你好
+		</div>
+		<script type="text/javascript">
+			var ele = document.getElementById("box");
+			var att = ele.getAttributeNode("id");
+			var txt = ele.firstChild;
+			
+			console.log(ele);
+			console.log(att);
+			console.log(txt);
+			
+			//nodeType
+			console.log(ele.nodeType);
+			console.log(att.nodeType);
+			console.log(txt.nodeType);
+			
+			//nodeName
+			console.log(ele.nodeName);
+			console.log(att.nodeName);
+			console.log(txt.nodeName);
+			
+			//nodeValue
+			console.log(ele.nodeValue);
+			console.log(att.nodeValue);
+			console.log(txt.nodeValue);
+		</script>
+		
+	</body>
+</html>

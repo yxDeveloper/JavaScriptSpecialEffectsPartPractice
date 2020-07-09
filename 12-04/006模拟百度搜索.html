@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				width: 392px;
+				padding: 5px;
+				list-style: none;
+				border: 1px solid #ccc;
+			}
+			li:hover{
+				line-height: 14px;
+				background-color: #ccc;
+			}
+			#baidu{
+				width: 540px;
+				height: 258px;
+				margin: 50px auto;
+			}
+			.box {
+				width: 510px;
+				margin: 20px auto;
+			}
+			input {
+				width: 400px;
+				height: 30px;
+				background: url(images/xiangji.png) no-repeat 480px 10px;
+			}
+			button {
+				width: 100px;
+				height: 36px;
+				color: #fff;
+				font-size: 15px;
+				background-color: #3385ff;
+				letter-spacing: 1px;
+				outline: medium;
+				border-bottom: 1px solid #2d78f4;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="baidu">
+			<img src="images/baidu.gif" >
+		</div>
+		<div class="box">
+			<input type="text" name="" id="" value="" />
+			<button type="button">百度一下</button>
+	<!-- 		<ul>
+				<li>aaa</li>
+				<li>bbb</li>
+				<li>ccc</li>
+			</ul> -->
+			
+		</div>
+	<script type="text/javascript">
+		//需求: 输入类容onkeyup/onkeydow(输入事件，键盘谈起事件),模拟服务器获取类容,创建ul,并在其中显示.
+		//步骤
+		//1.获取事件源
+		//2.绑定事件
+		//3.书写事件驱动程序
+		
+		//1.获取事件源
+		//模拟服务器获取内容
+		var arr = ["叶鑫牛皮","叶鑫666","叶鑫伟大","叶鑫才高八斗","叶鑫学富五车","叶鑫学识渊博","叶鑫的智慧","叶鑫聪明"]
+		var box = document.getElementsByTagName("div")[1];
+		var inp = box.children[0];
+		//2.绑定事件(输入类容oninput/onkeyup/onkeydown(输入事件，键盘谈起事件))
+		inp.onkeyup = function () {
+			//创建一个字符串,里面添加满了li和对应的内容
+			var newArr = [];
+			//从数组中查询以input中输入内容为开头的信息,然后加到li中,转换成字符
+			//遍历老数组,然后判断每一项,哪项是以input内容为开头的添加一个li塞进newArr
+			for(var i = 0;i<arr.length;i++){
+				//判断当前项,是否以input内容为开头
+				//获取输入内容的值input标签的value属性值
+				var val = this.value;
+				if(arr[i].indexOf(val)===0){
+					newArr.push("<li>"+arr[i]+"</li>");
+				}
+			}
+			
+			var str = newArr.join("");
+			//Bug1,每次创建新的ul之前先删除旧的ul
+			//只有ul存在,我们才能删除ul
+			
+			// var aaa = box.getElementsByTagName("ul")[0];		判断有没有aaa就可以
+			if(box.children[2]){
+				//只要存在,那么就是一个object,object只有不是null,对应的Boolean值都是true
+				box.removeChild(box.children[2]);
+			}
+			
+			//Bug2,如果input中内容为空,那么就不能在生成ul了
+			//如果input为空,那么切断函数
+// 			if(this.value.length === 0){
+// 				//切断函数return;
+// 				return;
+// 			}
+			//Bug2+Bug3,如果arr数组中没有以input为开头的元素,那么切断函数
+			//newArr长度为0,就能证明以input为开头的元素,在arr中不存在
+			if(this.value.length === 0 || newArr.length === 0){
+				//切断函数	不再产生新的ul
+				return;
+			} 
+			//3.书写事件驱动程序
+			var ul = document.createElement("ul");
+			//把创建好的内容添加到ul中
+			ul.innerHTML = str;
+			box.appendChild(ul);
+		}
+		
+		
+	</script>
+	</body>
+</html>

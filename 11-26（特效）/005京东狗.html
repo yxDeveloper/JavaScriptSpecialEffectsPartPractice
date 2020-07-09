@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				//获取事件源和所需元素
+				var img = document.getElementById("box");
+				//绑定事件(悬停事件)
+				img.onmouseover = function () {
+					//书写事件驱动程序
+					img.src = "image/jd2.png"
+				}
+				//获取事件源和所需元素
+				// var img = document.getElementById("box");
+				//绑定事件(悬停事件)
+				img.onmouseout = function () {
+					//书写事件驱动程序
+					img.src = "image/jd1.png"
+				}
+
+
+
+
+				//获取事件源（元素可以不获取直接使用id的值）
+				// var img = document.getElementById("box");
+				box.onmouseover = fn1;
+				box.onmouseout = fn2;
+				function fn1() {
+					box.src = "image/jd2.png";
+				}
+				function fn2() {
+					box.src = "image/jd1.png";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img id = "box" src="image/jd1.png" style="cursor: pointer;border: 1px solid greenyellow;">
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button">识别</button><br><br>
+		<button type="button">去掉</button><br><br>
+		<select id="sel" name="" multiple="multiple">
+			<option value ="0">香蕉</option>
+			<option value ="1">苹果</option>
+			<option value ="2">鲤鱼</option>
+			<option value ="3">鸭梨</option>
+		</select>
+		
+		<script type="text/javascript">
+			//需求: 点击识别水产,立刻把option对应的鲤鱼选择的属性设置为selected;
+			//步骤:
+			//1.获取事件源
+			//2.绑定事件
+			//3.书写事件驱动程序
+			
+			var sel = document.getElementById("sel");
+			var btn = document.getElementsByTagName("button")[0];
+			var btn2 = document.getElementsByTagName("button")[1];
+			var optArr = sel.getElementsByTagName("option");
+			btn.onclick = function (){
+				optArr[2].selected = "selected";
+				// alert(sel.value);
+			}
+			btn2.onclick = function() {
+				optArr[2].selected = false;		//方法一,但是某些浏览器不支持
+				// alert(sel.value);
+				// optArr[2].removeAttribute("selected");		//无法实现
+				optArr[0].selected = "selected";		//方法二,返回第一个,实用
+				optArr[3].selected = "selected";
+			}
+		</script>
+	</body>
+</html>

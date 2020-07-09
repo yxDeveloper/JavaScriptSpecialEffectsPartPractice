@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			
+			//rows:返回值是数组		(只读，table和textarea能用)
+			var tab = document.getElementsByTagName("table")[0];
+			
+			// inserRow()		(只有table能调用)	插入
+			// var tr = document.createElement("tr")
+			var aaa = tab.insertRow(0);
+			//deleteRow()	(只有table能调用)		删除
+			// console.log(aaa == tr);
+// 			console.log(aaa);
+// 			console.log(tab.rows);
+			
+			cells 			(只读,tr和textarea能用)		//添加tbody
+			
+			var ce = tab.children[0];
+			console.log(ce.children[0].cells);
+			
+			insertCell		(只有tr能用)添加td
+			ce.children[0].insertCell(0);
+			
+			deleteCell()		(只有tr能调用)删除td
+			ce.children[0].deleteCell(0);
+			
+		</script>
+	</body>
+</html>
